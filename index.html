@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard CV</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #007bff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s, 0.3s;
+            position: relative;
+        }
+        section:hover {
+            background-color: #f9f9f9;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        section.collapsible {
+            overflow: hidden;
+            max-height: 0;
+            transition: 0.3s ease-out;
+        }
+        section.active.collapsible {
+            max-height: 1000px;
+            transition: 0.5s ease-in;
+        }
+        h2 {
+            margin-top: -15px;
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .expand-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 0.3s ease;
+            color: #007bff;
+            font-size: 24px;
+        }
+        .active .expand-icon {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        p {
+            margin: 5px 0;
+        }
+        strong {
+            font-weight: bold;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu currículo profissional</h1>
+    </header>
+    <section class="collapsible" onclick="toggleSection(this)">
+        <h2>Informações Pessoais <span class="expand-icon"></span></h2>
+        <div class="content">
+            <p><strong>Nome:</strong> Richard Caic Da Silva Reis</p>
+            <p><strong>E-mail:</strong> richard.s.r.8caic@gmail.com</p>
+            <p><strong>Telefone:</strong> (11) 93949-9476</p>
+        </div>
+    </section>
+    <section class="collapsible" onclick="toggleSection(this)">
+        <h2>Experiência Profissional <span class="expand-icon"></span></h2>
+        <div class="content">
+            <p><strong>Cargo:</strong> Editor de imagens e Vendedor</p>
+            <p><strong>Empresa:</strong> Beyon Apple</p>
+            <p><strong>Período:</strong> 03/2020 - 02/2022</p>
+            <p><strong>Descrição:</strong> Produzia criativos para a rede social da empresa, realizava vendas presenciais e online.</p>
+            <hr>
+            <p><strong>Cargo:</strong> Auxiliar de Loja</p>
+            <p><strong>Empresa:</strong> Farma Conde</p>
+            <p><strong>Período:</strong> 06/2023 - </p>
+            <p><strong>Descrição:</strong> Organização e limpeza da loja, administrar o caixa, trabalho em equipe, bater metas de vendas de marca própria.</p>
+        </div>
+    </section>
+    <section class="collapsible" onclick="toggleSection(this)">
+        <h2>Educação <span class="expand-icon"></span></h2>
+        <div class="content">
+            <p><strong>Instituição:</strong> Anhanguera</p>
+            <p><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas</p>
+            <p><strong>Período:</strong> 02/2024 - </p>
+            <p><strong>Status:</strong> Cursando </p>
+            <hr>
+            <p><strong>Instituição:</strong> Gigabyte</p>
+            <p><strong>Curso:</strong> Informática: Excel, HTML, Photoshop, Administração </p>
+            <p><strong>Período:</strong> 9 meses de duração</p>
+            <p><strong>Status:</strong> Completo </p>
+        </div>
+    </section>
+    <section class="collapsible" onclick="toggleSection(this)">
+        <h2>Habilidades <span class="expand-icon"></span></h2>
+        <div class="content">
+            <ul>
+                <li>Boa Comunicação</li>
+                <li>Apto para Novos Aprendizados</li>
+                <li>Gerenciamento de Tempo</li>
+                <li>Vendas</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        &copy; Todos os direitos reservados por Richard Caic
+    </footer>
+    <script>
+        function toggleSection(section) {
+            section.classList.toggle("active");
+            var content = section.querySelector(".content");
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null; 
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
